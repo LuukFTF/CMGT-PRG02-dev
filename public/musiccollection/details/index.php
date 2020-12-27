@@ -3,8 +3,6 @@ date_default_timezone_set('Europe/Amsterdam');
 
 require_once '../includes/music-dataarrays.php';
 
-$id = $_GET['id'];
-
 // Redirect back if index not in url or value is empty
 if(!isset($_GET['id']) || $_GET['id'] == '')
 {
@@ -13,7 +11,6 @@ if(!isset($_GET['id']) || $_GET['id'] == '')
 }
 
 $id = $_GET['id'];
-
 $song = $songs[$id];
 
 ?>
@@ -65,6 +62,7 @@ $song = $songs[$id];
                     <h3><?=$song['length']?></h3>
                     <p>length</p>
                 </div>
+                <td><a class="btn" href="../edit?id=<?= $id ?>">Edit</a></td>
             </div>
         </section>
         <a href="/musiccollection" class="btn">Back</a>

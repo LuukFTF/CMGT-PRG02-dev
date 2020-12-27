@@ -54,8 +54,7 @@ require_once 'includes/music-dataarrays.php';
                         <td><?= $song['year'] ?></td>
                         <td><?= $song['plays'] ?></td>
                         <td><?= $song['length'] ?></td>
-                        <td><a href="details?id=<?= $id ?>">Details</a></td>
-                        <td><a href="edit?id=<?= $id ?>">Edit</a></td>
+                        <td><a class="btn" href="details?id=<?= $id ?>">Details</a></td>
                     </tr>
                     <?php $id++; } ?>
                 </tbody>

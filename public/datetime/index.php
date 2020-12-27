@@ -1,6 +1,21 @@
 <?php
 date_default_timezone_set('Europe/Amsterdam');
 
+// require_once 'datefunctions.php';
+
+function dateDiff($firstDate, $lastDate, $returnType) {
+    $diff = strtotime($lastDate) - strtotime($firstDate);
+
+    switch ($returnType) {
+        case "days":
+            $diff = round( $diff / (24 * 60 * 60) );
+        break;
+        default: $diff;
+    }
+    return $diff;
+}
+
+
 $test = "test";
 $currentDay = date("d");
 $currentMonth = date("m");
@@ -9,6 +24,12 @@ $currentYear = date("Y");
 $currentHour = date("G");
 $currentMinute = date("i");
 $currentMinute_text;
+
+$currentDate = date("d-m-y");
+$lastweekDate = date("d-m-y", strtotime("-1 week"));
+
+$currentDatetime = date("d-m-y H:i");
+$lastweekDatetime = date("d-m-y H:i", strtotime("-1 week"));
 
 if($currentMinute == 1) {
     $currentMinute_text = "minuut";
@@ -46,26 +67,28 @@ switch ($currentHour) {
     <title>Luuk's Datetime</title>
 </head>
 <body>
-    <div class="container flex">
-        <div class="flexitem">
-            <h1>Programmeren 2</h1>
-            <p><a href="https://github.com/LuukFTF/cmgt-prg02-dev">Github Repository</a></p>
+    <section class="main">
+        <div class="container flex">
+            <div class="flexitem">
+                <h1>Programmeren 2</h1>
+                <p><a href="https://github.com/LuukFTF/cmgt-prg02-dev">Github Repository</a></p>
+            </div>
+            <div class="flexitem">
+                <h3>Luuk's Style Greeting</h3>
+                <p><?= $greeting ?>!</p>
+            </div>
+            <div class="flexitem">
+                <p>Het is vandaag <?= $currentDay ?> <?= $currentMonth_text ?> <?= $currentYear ?>.</p>
+                <p>Het is vandaag <?= $currentDay ?>/<?= $currentMonth ?>/<?= $currentYear ?>.</p>
+                <p>Het is nu <?= $currentHour ?> uur en <?= $currentMinute ?> <?= $currentMinute_text ?>.</p>
+            </div>
+            <div class="flexitem">
+                <p> Datum vandaag: <?= $currentDatetime ?></p>
+                <p> Datum vorige week: <?= $lastweekDatetime ?></p>
+                <p> Verschil tussen dagen: <?= dateDiff($lastweekDatetime, $currentDatetime, "days") ?></p>
+                <p> Nachtjes tot verjaardag</p>
+            </div>
         </div>
-        <div class="flexitem">
-            <h3>Luuk's Style Greeting</h3>
-            <p><?= $greeting ?>!</p>
-        </div>
-        <div class="flexitem">
-            <p>
-            Het is vandaag <?= $currentDay ?> <?= $currentMonth_text ?> <?= $currentYear ?>.
-            </p>
-            <p>
-            Het is vandaag <?= $currentDay ?>/<?= $currentMonth ?>/<?= $currentYear ?>.
-            </p>
-            <p>
-            Het is nu <?= $currentHour ?> uur en <?= $currentMinute ?> <?= $currentMinute_text ?>.
-            </p>
-        </div>
-    </div>
+    </section>
 </body>
-</html>-
+</html>

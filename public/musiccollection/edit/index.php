@@ -1,4 +1,27 @@
 <?php
+date_default_timezone_set('Europe/Amsterdam');
+
+require_once '../includes/music-dataarrays.php';
+
+// Redirect back if index not in url or value is empty
+if(!isset($_GET['id']) || $_GET['id'] == '')
+{
+    header('Location: index.php');
+    exit;
+} else {
+    $id = $_GET['id'];
+    $song = $songs[$id];
+
+    $title = $song['title'];
+    $artist = $song['artist'];
+    $album = $song['album'];
+    $genre = $song['genre'];
+    $year = $song['year'];
+    $plays = $song['plays'];
+    $length = $song['length'];
+
+}
+
 if (isset($_POST['submit'])) {
 
     $title = $_POST['title'];
@@ -22,14 +45,8 @@ if (isset($_POST['submit'])) {
 
     if(empty($errors))
     {
-
-
+        echo 'Title is: ' . $title;
     }
-
-
-
-
-    
 }
 
 

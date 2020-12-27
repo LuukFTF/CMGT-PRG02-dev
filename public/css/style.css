@@ -87,20 +87,31 @@ tbody tr:nth-child(odd) {
 
 .btn, a .btn {
     text-decoration: none;
+
     display: inline-block;
     padding: 10px 30px;
-    cursor: pointer;
+
     background: var(--primary-color);
     color: var(--onprimary-color);
+    
     border: none;
     border-radius: 5px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+
+    cursor: pointer;
 }
 
 .btn:hover, .btn:active {
     background: var(--primary-color2);
     box-shadow: 0 3px 13px rgba(0, 0, 0, 0.2);
 }
+
+table .btn {
+    padding: 5px 10px;
+    background: var(--surface-color3);
+    color: var(--onsurface-color2);
+}
+
 
 .songdetails h3  {
     color: var(--onsurface-color);
