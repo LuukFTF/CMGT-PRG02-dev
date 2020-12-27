@@ -94,8 +94,13 @@ tbody tr:nth-child(odd) {
     color: var(--onprimary-color);
     border: none;
     border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
+.btn:hover {
+    background: var(--primary-color2);
+    box-shadow: 0 3px 13px rgba(0, 0, 0, 0.2);
+}
 
 .songdetails h3  {
     color: var(--onsurface-color);
@@ -113,4 +118,38 @@ tbody tr:nth-child(odd) {
 .songdetails .item  {
     padding: 0;
     margin: 20px 0;
+}
+
+.songcreate .datafield-item {
+    margin: 20px 0;
+}
+
+.songcreate p  {
+    color: var(--onsurface-color2);
+    padding: 0;
+    margin: 0;
+    font-variant: small-caps;
+}
+
+label {
+    display: block;
+    margin: 0 0 5px 0;
+    font-variant: small-caps;
+    color: var(--onsurface-color3);
+}
+
+input {
+    background-color: var(--surface-color2);
+    color: var(--onsurface-color2);
+    outline: none;
+    border:0px solid var(--onsurface-color3);
+    border-radius: 5px;
+    padding: 10px 10px;
+    font-size: 1em;
+
+}
+
+input[type="text"]:focus, input[type="text"]:hover {
+    color: var(--onsurface-color);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }

@@ -21,16 +21,15 @@ $song = $songs[$id];
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-</head>
-<body>
-<meta charset="UTF-8">
-    <title>{Song} Details - Luuk's Music Collection</title>  
+    <meta charset="UTF-8">
+    <title><?=$song['title']?> Details - Luuk's Music Collection</title>  
     <meta name="viewport" content="width=device-width,
     initial-schale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <link rel="stylesheet" href="../../css/style.css">
-</body>
+</head>
+
+<body>
     <div class="container flex">
         <div class="flexitem">
             <h1>Programmeren 2</h1>
@@ -70,4 +69,5 @@ $song = $songs[$id];
         </section>
         <a href="/musiccollection" class="btn">Back</a>
     </div>
+</body>
 </html>

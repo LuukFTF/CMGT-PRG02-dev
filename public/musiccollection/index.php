@@ -61,5 +61,6 @@ require_once 'includes/music-dataarrays.php';
                 </tbody>
             </table> 
         </div>
+        <a href="/musiccollection/create" class="btn">Create</a>
     </div>
 </html>
