@@ -97,7 +97,7 @@ tbody tr:nth-child(odd) {
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
-.btn:hover {
+.btn:hover, .btn:active {
     background: var(--primary-color2);
     box-shadow: 0 3px 13px rgba(0, 0, 0, 0.2);
 }
@@ -142,9 +142,9 @@ input {
     background-color: var(--surface-color2);
     color: var(--onsurface-color2);
     outline: none;
-    border:0px solid var(--onsurface-color3);
+    border:2px solid var(--surface-color2);
     border-radius: 5px;
-    padding: 10px 10px;
+    padding: 8px 8px;
     font-size: 1em;
 
 }
@@ -152,4 +152,5 @@ input {
 input[type="text"]:focus, input[type="text"]:hover {
     color: var(--onsurface-color);
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    border:2px solid var(--primary-color);
 }
