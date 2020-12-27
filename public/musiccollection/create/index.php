@@ -1,4 +1,32 @@
 <?php
+if (isset($_POST['submit'])) {
+
+    $title = $_POST['title'];
+    $artist = $_POST['artist'];
+    $album = $_POST['album'];
+    $genre = $_POST['genre'];
+    $year = $_POST['year'];
+    $plays = $_POST['plays'];
+    $length = $_POST['length'];
+
+    $errors = [];
+    if($title == '') {
+        $errors[] = 'Title is required';
+    }
+    if($artist == '') {
+        $errors[] = 'Artist name is required';
+    }
+    if($album == '') {
+        $errors[] = 'Album name is required';
+    }
+
+    if(empty($errors))
+    {
+
+
+    }
+}
+
 
 ?>
 
@@ -6,7 +34,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title><?=$song['title']?> Details - Luuk's Music Collection</title>  
+    <title>Add New Song - Luuk's Music Collection</title>  
     <meta name="viewport" content="width=device-width,
     initial-schale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
@@ -22,53 +50,62 @@
         <section class="songcreate">
             <div class="flexitem">
                 <h2>Add New Song</h2>
+                
+                <errors class="errors">
+                    <?php if(isset($errors)) { ?>
+                        <ul class="errors">
+                        <?php foreach ($errors as $error) { ?>
+                            <li><?= $error ?></li>
+                        <?php } ?>
+                        </ul>
+                    <?php } ?>
+                </errors>
 
                 <form action="" method="post">
                     <div class="datafield-item">
                         <label for="title">title</label>
-                        <input id="title" type="text" name="text" value=""/> 
+                        <input id="title" type="text" name="text" value="<?= isset($album) ? $title : ''  ?>"/> 
                     </div>
                 </form>
                 <form action="" method="post">
                     <div class="datafield-item">
                         <label for="artist">artist</label>
-                        <input id="artist" type="text" name="text" value=""/> 
+                        <input id="artist" type="text" name="text" value="<?= isset($album) ? $artist : '' ?>"/> 
                     </div>
                 </form>
                 <form action="" method="post">
                     <div class="datafield-item">
                         <label for="album">album</label>
-                        <input id="album" type="text" name="text" value=""/> 
+                        <input id="album" type="text" name="text" value="<?= isset($album) ? $album  : '' ?>"/> 
                     </div>
                 </form>
                 <form action="" method="post">
                     <div class="datafield-item">
                         <label for="genre">genre</label>
-                        <input id="genre" type="text" name="text" value=""/> 
+                        <input id="genre" type="text" name="text" value="<?= isset($album) ? $genre : ''  ?>"/> 
                     </div>
                 </form>
                 <form action="" method="post">
                     <div class="datafield-item">
                         <label for="year">year</label>
-                        <input id="year" type="text" name="text" value=""/> 
+                        <input id="year" type="text" name="text" value="<?= isset($album) ? $year : ''  ?>"/> 
                     </div>
                 </form>
                 <form action="" method="post">
                     <div class="datafield-item">
                         <label for="plays">plays</label>
-                        <input id="plays" type="text" name="text" value=""/> 
+                        <input id="plays" type="text" name="text" value="<?= isset($album) ? $plays : ''  ?>"/> 
                     </div>
                 </form>
                 <form action="" method="post">
                     <div class="datafield-item">
                         <label for="length">length</label>
-                        <input id="length" type="text" name="text" value=""/> 
+                        <input id="length" type="text" name="text" value="<?= isset($album) ? $length : ''  ?>"/> 
                     </div>
                 </form>
                 <div class="datasubmit-btn">
                     <input class="btn" type="submit" name="submit" value="Save"/>
                 </div>
-
             </div>
         </section>
         <a href="/musiccollection" class="btn">Back</a>
