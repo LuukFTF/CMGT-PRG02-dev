@@ -41,7 +41,7 @@ require_once 'includes/music-dataarrays.php';
                     <th></th>
                 </thead>
                 <tfoot>
-                    <td colspan="6">&copy; Luuk's Music Collection 2020 </td>
+                    <td colspan="9">&copy; Luuk's Music Collection 2020 </td>
                 </tfoot>
                 <tbody>
                     <?php foreach ($songs as $id => $song) { ?>
