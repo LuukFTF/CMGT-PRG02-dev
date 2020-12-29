@@ -35,31 +35,31 @@ $song = $songs[$id];
         <section class="songdetails">
             <div class="flexitem">
                 <div class="item">
-                    <h2><?=$song['title']?></h2>
+                    <h3><?=$song['title']?></h3>
                     <p>#<?=$id?></p>
                 </div>
                 <div class="item">
                     <p>artist</p>
-                    <h3><?=$song['artist']?></h3>
+                    <h4><?=$song['artist']?></h4>
                 </div>
                 <div class="item">
                     <p>album</p>
-                    <h3><?=$song['album']?></h3>
+                    <h4><?=$song['album']?></h4>
                 </div>
                 <div class="item">
                     <p>genre</p>
-                    <h3><?=$song['genre']?></h3>
+                    <h4><?=$song['genre']?></h4>
                 </div>
                 <div class="item">
                     <p>year</p>
-                    <h3><?=$song['year']?></h3>
+                    <h4><?=$song['year']?></h4>
                 </div>
                 <div class="item">
-                    <h3><?=$song['plays']?></h3>
+                    <h4><?=$song['plays']?></h4>
                     <p>plays</p>
                 </div>
                     <div class="item">
-                    <h3><?=$song['length']?></h3>
+                    <h4><?=$song['length']?></h4>
                     <p>length</p>
                 </div>
                 <td><a class="btn" href="../edit?id=<?= $id ?>">Edit</a></td>
