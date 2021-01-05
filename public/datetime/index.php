@@ -1,20 +1,7 @@
 <?php
 date_default_timezone_set('Europe/Amsterdam');
 
-// require_once 'datefunctions.php';
-
-function dateDiff($firstDate, $lastDate, $returnType) {
-    $diff = strtotime($lastDate) - strtotime($firstDate);
-
-    switch ($returnType) {
-        case "days":
-            $diff = round( $diff / (24 * 60 * 60) );
-        break;
-        default: $diff;
-    }
-    return $diff;
-}
-
+require_once 'datefunctions.php';
 
 $test = "test";
 $currentDay = date("d");
@@ -25,11 +12,16 @@ $currentHour = date("G");
 $currentMinute = date("i");
 $currentMinute_text;
 
-$currentDate = date("d-m-y");
-$lastweekDate = date("d-m-y", strtotime("-1 week"));
+$currentDate = date("Y-m-d");
+$lastweekDate = date("Y-m-d", strtotime("-1 week"));
 
-$currentDatetime = date("d-m-y H:i");
-$lastweekDatetime = date("d-m-y H:i", strtotime("-1 week"));
+$currentDatetime = date("Y-m-d H:i");
+$lastweekDatetime = date("Y-m-d H:i", strtotime("-1 week"));
+
+$currentYearDate = date("m-d");
+$lastweekYearDate = date("m-d", strtotime("-1 week"));
+
+$birthday = "2001-12-10";
 
 if($currentMinute == 1) {
     $currentMinute_text = "minuut";
@@ -85,8 +77,8 @@ switch ($currentHour) {
             <div class="flexitem">
                 <p> Datum vandaag: <?= $currentDatetime ?></p>
                 <p> Datum vorige week: <?= $lastweekDatetime ?></p>
-                <p> Verschil tussen dagen: <?= dateDiff($lastweekDatetime, $currentDatetime, "days") ?></p>
-                <p> Nachtjes tot verjaardag</p>
+                <p> Verschil tussen dagen: <?= dateDiff($lastweekDate, $currentDate, "days") ?></p>
+                <p> Nachtjes tot verjaardag: <?= dateBirthdayTodayDiff($birthday) ?></p>
             </div>
         </div>
     </section>
