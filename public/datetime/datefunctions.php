@@ -19,6 +19,14 @@ function dateDiff($firstDate, $lastDate, $returnType) {
     return $diff;
 }
 
+/**
+ * Calculate difference from today & convert to returntype
+ *
+ * @param int $date First date in Y-m-d
+ * @param int $inputtype Input Type
+ * @param int $inputtype Return Type
+ * @return float
+ */
 function dateTodayDiff($date, $inputtype = "date", $returnType = "days") {
     $currentDate = date("Y-m-d"); 
     $currentDatetime = date("Y-m-d H:i");
@@ -28,7 +36,7 @@ function dateTodayDiff($date, $inputtype = "date", $returnType = "days") {
             $diff = dateDiff($currentDate, $date, $returnType);
         break;
         case "datetime":
-            $diff = dateDiff($currentDate, $date, $returnType);
+            $diff = dateDiff($currentDatetime, $date, $returnType);
         break;
         default: $diff = dateDiff($currentDate, $date, $returnType);
     }
@@ -36,6 +44,14 @@ function dateTodayDiff($date, $inputtype = "date", $returnType = "days") {
     return $diff;
 }
 
+/**
+ * Calculate difference of today and birthday & convert to returntype
+ *
+ * @param int $birthday birthdate in Y-m-d
+ * @param int $inputtype Input Type
+ * @param int $inputtype Return Type
+ * @return float
+ */
 function dateBirthdayTodayDiff($birthday, $inputtype = "date", $returnType = "days") {
 
     $currentTime = time();
