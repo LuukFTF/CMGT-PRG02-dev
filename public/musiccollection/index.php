@@ -59,7 +59,7 @@ require_once 'includes/music-dataarrays.php';
                     <?php $id++; } ?>
                 </tbody>
             </table> 
-        </div>
+        </div> 
         <a href="/musiccollection/create" class="btn">Create</a>
     </div>
 </html>
