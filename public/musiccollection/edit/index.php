@@ -119,11 +119,9 @@ if (isset($_POST['submit'])) {
                         <input id="plays" type="text" name="text" value="<?= isset($album) ? $plays : ''  ?>"/> 
                     </div>
                 </form>
-                <form action="" method="post">
-                    <div class="datafield-item">
-                        <label for="length">length</label>
-                        <input id="length" type="text" name="text" value="<?= isset($album) ? $length : ''  ?>"/> 
-                    </div>
+                <form class="datafield-item" action="" method="post">
+                    <label for="length">length</label>
+                    <input id="length" type="text" name="text" value="<?= isset($album) ? $length : ''  ?>"/> 
                 </form>
                 <div class="datasubmit-btn">
                     <input class="btn" type="submit" name="submit" value="Save"/>
